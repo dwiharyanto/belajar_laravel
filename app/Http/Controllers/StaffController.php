@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Staff;
 
 class StaffController extends Controller
 {
     public function index(){
     	
-    	$staff = DB::table('staff')->paginate(7);
+    	$staff = Staff::index();
 
     	return view('/simpleCRUD/index', ['staff'=>$staff]);
     }

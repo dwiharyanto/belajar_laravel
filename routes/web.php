@@ -62,3 +62,11 @@ route::get('/profile',function(){
 
 	route::get('/form','FormValidationController@index');
 	route::post('/form/process','FormValidationController@process');
+
+//RoUTING FOR ELOQUENT
+	route::get('/pembeli','PembeliController@index');
+	route::get('/pembeli/tambah','PembeliController@tambah');
+	route::post('/pembeli/prosesadd','PembeliController@prosesTambah');
+	route::get('/pembeli/update/{id}','PembeliController@update');
+	route::put('/pembeli/edit/{id}','PembeliController@edit');
+	route::get('/pembeli/delete/{id}','PembeliController@delete');

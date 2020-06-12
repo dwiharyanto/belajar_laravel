@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RenameStudentTable extends Migration
+class CreatePembelisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class RenameStudentTable extends Migration
      */
     public function up()
     {
-        Schema::rename('student_baru','students');
+        Schema::create('pembeli', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('address');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,7 +28,6 @@ class RenameStudentTable extends Migration
      */
     public function down()
     {
-        //
-        Schema::rename('students','hahaha');
+        Schema::dropIfExists('pembeli');
     }
 }
