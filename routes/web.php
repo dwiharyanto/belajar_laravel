@@ -49,7 +49,7 @@ route::get('/profile',function(){
 	route::post('/usersform/process','UsersController@processForm');
 
 
-//ROUTING FOR SIMPLE CRUD
+//ROUTING FOR SIMPLE CRUD with laravel query builder
 	route::get('/staff','StaffController@index');
 	route::get('/staff/add','StaffController@addStaff');
 	route::post('/staff/processadd','StaffController@processAddStaff');
@@ -70,3 +70,6 @@ route::get('/profile',function(){
 	route::get('/pembeli/update/{id}','PembeliController@update');
 	route::put('/pembeli/edit/{id}','PembeliController@edit');
 	route::get('/pembeli/delete/{id}','PembeliController@delete');
+
+	// testing one to many eloquent
+	route::get('/lecture','LectureController@index');

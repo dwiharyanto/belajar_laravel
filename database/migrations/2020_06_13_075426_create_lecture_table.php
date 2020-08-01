@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePembelisTable extends Migration
+class CreateLectureTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePembelisTable extends Migration
      */
     public function up()
     {
-        Schema::create('pembeli', function (Blueprint $table) {
+        Schema::create('lecture', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
+            $table->String('name');
+            $table->String('address');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePembelisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembeli');
+        Schema::dropIfExists('lecture');
     }
 }
